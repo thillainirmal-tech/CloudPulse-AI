@@ -1,0 +1,1 @@
+package dev.thillainirmal.cloudpulse;import org.springframework.boot.*;import org.springframework.boot.autoconfigure.*;@SpringBootApplication public class CloudPulseApplication{public static void main(String[]a){SpringApplication.run(CloudPulseApplication.class,a);}}

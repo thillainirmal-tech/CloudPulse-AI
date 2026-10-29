@@ -1,0 +1,3 @@
+package dev.thillainirmal.cloudpulse;import org.springframework.web.bind.annotation.*;import java.util.*;
+@RestController @RequestMapping("/api")
+public class PulseController{private final PulseAnalyzer a;public PulseController(PulseAnalyzer a){this.a=a;}@PostMapping("/analyze")public PulseAnalyzer.Analysis analyze(@RequestBody PulseAnalyzer.Snapshot s){return a.analyze(s);}@GetMapping("/demo")public Map<String,Object> demo(){var s=new PulseAnalyzer.Snapshot("payments","fraud-engine",91,94,8.7,1240,5);return Map.of("snapshot",s,"analysis",a.analyze(s),"topology",List.of("gateway","payments-api","fraud-engine","postgres"));}}
