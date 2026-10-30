@@ -10,6 +10,8 @@ Explainable Kubernetes signal correlation with Prometheus, Grafana and safety-fi
 
 [Open the full-resolution screenshot](docs/media/product-console.jpg) · **Recruiter demo:** analyze a telemetry snapshot, inspect the evidence-backed diagnosis, then switch to guarded live Prometheus queries without enabling cluster mutation.
 
+[▶ Watch the recorded diagnosis demo (5 seconds)](docs/media/runtime-demo.mp4)
+
 > **Deployment status:** tested, containerized and ready for an AWS/EKS observability deployment; no public production endpoint is claimed yet.
 
 CloudPulse correlates CPU, memory, error rate, p95 latency and restart signals into a health score, probable cause, evidence findings and read-only diagnostic plan.
