@@ -2,6 +2,8 @@ services:
   cloudpulse:
     build: .
     ports: ["8087:8087"]
+    environment: ["PROMETHEUS_URL=http://prometheus:9090"]
+    depends_on: [prometheus]
   prometheus:
     image: prom/prometheus:v3.1.0
     volumes: ["./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro"]
@@ -10,4 +12,4 @@ services:
     image: grafana/grafana:11.4.0
     volumes: ["./grafana/provisioning:/etc/grafana/provisioning:ro"]
     ports: ["3000:3000"]
-    environment: ["GF_SECURITY_ADMIN_PASSWORD=cloudpulse"]
+    environment: ["GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD:?set GRAFANA_ADMIN_PASSWORD}"]
